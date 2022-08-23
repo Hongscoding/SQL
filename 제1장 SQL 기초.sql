@@ -48,7 +48,55 @@ delete from `User1` Where `age` >= 30;
 
 
 #실습 1-7
+create table `TblUser` (`userId` varchar(10), 
+						`userName` varchar(10), 
+						`userHp` char(13), 
+						`userAge` tinyint, 
+						`userAddr` varchar(20)
+);
+create table `TblProduct` (`prdCode` int, 
+						   `prdName` varchar(10), 
+						   `prdPrice` int, 	
+						   `prdAmount` int, 
+						   `prdCompany` varchar(10), 
+						   `prdMakeDate` DATE
+);
+
 #실습 1-8
+insert into `tbluser` values ('p101', '김유신', '010-1234-1001', 25, '서울시 중구');
+insert into `tbluser` values ('p101', '김춘추', '010-1234-1002', 25, '부산시 금정구');
+insert into `tbluser` (`userId`, `userName`,`userAge`, `userAddr`) values ('p103', '장보고', 31,'경기도 광주군');
+insert into `tbluser` (`userId`, `userName`, `userAddr`) values ('p104', '강감찬', '경남 창원시');
+insert into `tbluser` (`userId`, `userName`,`userHp`, `userAge`) values ('p105', '이순신','010-1234-1005', 50);
+
+insert into `tblproduct` values (1 , '냉장고', 800, 10, 'LG', '2022-01-06');
+insert into `tblproduct` values (2 , '노트북', 1200, 20, '삼성', '2022-01-06');
+insert into `tblproduct` values (3 , 'TV', 1400, 6, 'LG', '2022-01-06');
+insert into `tblproduct` values (4 , '세탁기', 1000, 8, 'LG', '2022-01-06');
+insert into `tblproduct` (`prdCode`, `prdName`,`prdPrice`, `prdAmount`) values (6, '컴퓨터', 1100,0);
+insert into `tblproduct` values (6 , '휴대폰', 900, 102, '삼성', '2022-01-06');
+
 #실습 1-9
+ SELECT * FROM `TblUser`;
+ SELECT `userName` FROM `TblUser`;
+ SELECT `userName`, `userHp` FROM `TblUser`;
+ SELECT * FROM `TblUser` WHERE `userId`='p102';
+ SELECT * FROM `TblUser` WHERE `userId`='p104' OR `userId`='p105';
+ SELECT * FROM `TblUser` WHERE `userAddr`='신라';
+ SELECT * FROM `TblUser` WHERE `userAge` > 30;
+ SELECT * FROM `TblUser` WHERE `userHP` IS NULL;
+ UPDATE `TblUser` SET `userAge`=42 WHERE `userID`='p104';
+ UPDATE `TblUser` SET `userAddr`='경남 김해시' WHERE `userId`='p105';
+ DELETE FROM `TblUser` WHERE `userId`='p103';
+ SELECT * FROM `TblProduct`;
+ SELECT `prdName` FROM `TblProduct`;
+ SELECT `prdName`, `prdPrice` FROM `TblProduct`;
+ SELECT * FROM `TblProduct` WHERE `prdCompany`='LG';
+ SELECT * FROM `TblProduct` WHERE `prdCompany`='삼성';
+ UPDATE `TblProduct` SET 
+ `prdCompany`='삼성', 
+ `prdMakeDate`='2021-01-01' 
+ WHERE 
+ `prdCode`=5
 
 
