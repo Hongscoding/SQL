@@ -192,7 +192,7 @@ from `student` as a
 join `register` as b on a.stdno=b.regStdNo
 join `lecture` as c on b.regLecNo=c.lecno
 where `regTotalScore` >= 60
-group by `stdname`;
+group by `stdno`;
 #실습 3-30
  SELECT 
 	`stdNo`,
@@ -202,4 +202,4 @@ group by `stdname`;
 FROM `Student` AS a
 join `register` as b on a.stdno=b.regStdNo
 join `lecture` as c on b.regLecNo=c.lecno
-group by `stdname`;
+group by `stdno`;
